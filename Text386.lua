@@ -33,8 +33,8 @@ local guns = {
 	["M4A1"] = true,
 	["Mac10"] = true,
 	["ScrappySMG"] = true,
-	["PumpShootgun"] = true,
-	["ScrappyShootgun"] = true
+	["PumpShotgun"] = true,
+	["ScrappyShotgun"] = true
 }
 
 --------------------------------------------------
