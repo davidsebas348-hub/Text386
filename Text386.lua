@@ -51,7 +51,8 @@ local function createESP(tool)
 	if not getgenv().ESP_GUNS then return end
 	if not guns[tool.Name] then return end
 
-	local handle = tool:FindFirstChild("Handle")
+	local handle = tool:FindFirstChild("Handle") or tool:WaitForChild("Handle", 2)
+if not handle then return end
 	if not handle or not handle:IsA("BasePart") then return end
 
 	if handle:FindFirstChild("ESP_GUNS") then return end
@@ -83,7 +84,7 @@ local function update(tool)
 	local handle = tool:FindFirstChild("Handle")
 	if not handle then return end
 
-	if tool.Parent == itemsFolder then
+	if tool:IsDescendantOf(itemsFolder) then
 		createESP(tool)
 	else
 		removeESP(handle)
